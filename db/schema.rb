@@ -11,12 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130207023937) do
+ActiveRecord::Schema.define(:version => 20130207211838) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
     t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "plates", :force => true do |t|
+    t.string   "license"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "plates_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "plate_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

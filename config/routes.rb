@@ -1,4 +1,14 @@
 Mcp::Application.routes.draw do
+  get "plates/index"
+  get "plates/new"
+  get "plates/show"
+
+  get "plates/edit"
+
+  get "plates/update"
+
+  get "plates/destroy"
+
   root to: 'pages#home'
 
   get "pages/about"
