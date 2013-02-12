@@ -1,6 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.0'
+
+gem 'bootstrap-sass', '2.1'
 gem 'omniauth'
 gem 'omniauth-facebook'
 # Bundle edge Rails instead:
@@ -18,7 +20,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'mechanize'
+gem 'nokogiri'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 

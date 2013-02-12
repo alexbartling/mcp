@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
   	before_save :create_remember_token
 	
 	has_many :authorizations
-	has_and_belongs_to_many :plates
+	has_many :usersplates
+  	has_many :plates, :through => :usersplates
 
 	private
 

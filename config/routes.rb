@@ -1,27 +1,34 @@
 Mcp::Application.routes.draw do
-  get "plates/index"
-  get "plates/new"
-  get "plates/show"
+  get "citations/result"
 
-  get "plates/edit"
+  # get "tickets/index"
 
-  get "plates/update"
+  # get "tickets/new"
 
-  get "plates/destroy"
+  # get "tickets/create"
 
+  # get "tickets/destroy"
+
+    get "plates/index"
+  
   root to: 'pages#home'
 
   get "pages/about"
   match 'contact', to: 'pages#contact'
   get "pages/contact"
 
-  resources :users 	
+
+
+  resources :tickets
+  resources :plates
+  resources :users
   resources :sessions, only: [:new, :create, :destroy]
  
 
   match '/signup',   to: 'users#new'
   match '/signin',   to: 'sessions#new'
   match '/signout',  to: 'sessions#destroy', via: :delete
+
 
   
 

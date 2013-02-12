@@ -11,12 +11,12 @@ class UsersController < ApplicationController
 
   def show
   	@user=User.find(params[:id])
+    @plate = Plate.new
   end
 
   def new
   	@user=User.new	
   end
-  
   
   def create
     @user = User.new(params[:user])
