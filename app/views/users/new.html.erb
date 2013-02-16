@@ -1,4 +1,5 @@
 <%= form_for(@user, html: { class: "form-signin"}) do |f| %>
+	<%= render 'shared/error_messages', object: @user %>
 	<h2 class="form-signin-heading">Sign Up</h2>
 	<div class="control-group">
 		<%= f.label :name, class: 'control-label' %>
