@@ -6,8 +6,9 @@
         <ul class="nav pull-right">
           <li><%= link_to 'Home', root_url %></li>
           <li><%= link_to 'About', pages_about_path %></li>
-          <% if signed_in? %>
+          <% if current_user.present? %>
           <li><%= link_to 'Profile', current_user, class: "active" %></li>
+          <li><%= link_to 'Sign Out', signout_path, method: 'delete', class: "active" %></li>
           <% else %>
           <li><%= link_to 'Sign In',signin_path, class: "active"%></li>   
       <% end %> 

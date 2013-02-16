@@ -1,5 +1,5 @@
 Mcp::Application.routes.draw do
-  get "citations/result"
+   get "citations/result"
 
   # get "tickets/index"
 
@@ -9,13 +9,13 @@ Mcp::Application.routes.draw do
 
   # get "tickets/destroy"
 
-    get "plates/index"
+  get "plates/index"
   
   root to: 'pages#home'
 
-  get "pages/about"
+  get   'pages/about'
   match 'contact', to: 'pages#contact'
-  get "pages/contact"
+  get   'pages/contact'
 
 
 

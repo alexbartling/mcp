@@ -1,33 +1,31 @@
-
-<%= form_for(@user, html: { class: "form-signup"}) do |f| %>
-	<div class="container">
-		<div class="control-group">
-			<%= f.label :name, class: 'control-label' %>
-			<div class="controls">
-				<%= f.text_field :name %>
-			</div>
+<%= form_for(@user, html: { class: "form-signin"}) do |f| %>
+	<h2 class="form-signin-heading">Sign Up</h2>
+	<div class="control-group">
+		<%= f.label :name, class: 'control-label' %>
+		<div class="controls">
+			<%= f.text_field :name %>
 		</div>
-		<div class="control-group">
-			<%= f.label :email, class: 'control-label' %>
-			<div class="controls">
-				<%= f.text_field :email %>
-			</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :email, class: 'control-label' %>
+		<div class="controls">
+			<%= f.text_field :email %>
 		</div>
-		<div class="control-group">
-			<%= f.label :password, class: 'control-label' %>
-			<div class="controls">
-				<%= f.password_field :password %>
-			</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :password, class: 'control-label' %>
+		<div class="controls">
+			<%= f.password_field :password %>
 		</div>
-		<div class="control-group">
-			<%= f.label :password_confirmation, "Confirmation", class: 'control-label' %>
-			<div class="controls">
-				<%= f.password_field :password_confirmation %>
-			</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :password_confirmation, "Confirmation", class: 'control-label' %>
+		<div class="controls">
+			<%= f.password_field :password_confirmation %>
 		</div>
-		<div class="control-group" >
-	    	<div class="controls">
-	      <%= f.submit 'Sign Up!', class: 'btn btn-primary'%>
-	    </div>
-	  </div>
+	</div>
+	<div class="control-group" >
+		<div class="controls">
+	  <%= f.submit 'Sign Up!', class: 'btn btn-primary'%>
+	</div>
 <% end %>

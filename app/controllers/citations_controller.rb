@@ -1,7 +1,7 @@
 class CitationsController < ApplicationController
-  def result
-  require 'rubygems'
-  require 'mechanize'
+   	def result
+  	require 'rubygems'
+require 'mechanize'
 	agent = Mechanize.new
 
 
@@ -9,12 +9,61 @@ class CitationsController < ApplicationController
 	mcp_form = page.form('CITATION')
 	mcp_form.LIC = '373mzf'
 	page = agent.submit(mcp_form)
-	@data = agent.page.search('.tabledata')
+	table = page.search('#Processing table table table tr')
+	table_rows = table[1..-3]
+		
+		table_rows.each do |tr|
+			@row = tr.children[1..-2].text.gsub(/\302\240|\s/, '')
+			
+			
+		end
+
+		
+
+
+
+
 	
-  end
-end
 
 
 
+	
+	end
+ end
+ 
+	
 
-	# @monkey = agent.page.search('.tabledata').map(&:text).map(&:strip)
+	
+
+	
+  
+
+# # table = page.xpath('#Processing table table table tr')
+
+# 	# @monkey = agent.page.search('.tabledata')
+
+# 	# rows = page.search('#Processing table table table tr')
+
+# 	# @table = page.parser.xpath("//td[@id='Processing']//table//table//table/tr").map{ |n| n.text }
+
+# 	@array = Array.new
+
+# 	# Iterates over rows
+# 	table_rows.each do |row|
+		
+ 
+# 	# Iterates over cells in row
+# 	row.children.each_with_index do |child, i|
+			
+		
+
+# 		if i == 0
+		
+# 		elsif i == 1
+		
+# 		elsif i == 2
+		
+# 		elsif i == 3
+		
+# 		elsif i == 4
+		
