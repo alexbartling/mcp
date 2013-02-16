@@ -1,32 +1,22 @@
 class CitationsController < ApplicationController
    	def result
-  	require 'rubygems'
-require 'mechanize'
-	agent = Mechanize.new
-
-
-	page = agent.get('https://step1.caledoncard.com/citations/milwaukee.html')
-	mcp_form = page.form('CITATION')
-	mcp_form.LIC = '373mzf'
-	page = agent.submit(mcp_form)
-	table = page.search('#Processing table table table tr')
-	table_rows = table[1..-3]
+  		require 'rubygems'
+		require 'mechanize'
 		
-		table_rows.each do |tr|
-			@row = tr.children[1..-2].text.gsub(/\302\240|\s/, '')
-			
-			
+		agent = Mechanize.new
+
+		page = agent.get('https://step1.caledoncard.com/citations/milwaukee.html')
+		mcp_form = page.form('CITATION')
+		mcp_form.LIC = '373mzf'
+		page = agent.submit(mcp_form)
+		table = page.search('#Processing table table table tr')
+		table_rows = table[1..-3]
+		
+		@row_array = Array.new
+		table_rows.each_with_index do |tr, key|
+			row = tr.children[1..-2].text
+			@row_array[key] = row.split(' ')
 		end
-
-		
-
-
-
-
-	
-
-
-
 	
 	end
  end

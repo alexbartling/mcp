@@ -1,2 +1,7 @@
 <h1>Citations#results</h1>
-<p><%= @row%></p>
+
+
+<% @row_array.each_with_index do |value, key| %>  
+	<%= value %>
+
+<% end %>
