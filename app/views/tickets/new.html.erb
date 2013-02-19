@@ -1,5 +1,10 @@
+
+
+
+
+
 <%= form_for(@ticket, html: { class: "form-horizontal"}) do |f| %>
-	<%= f.hidden_field :plate_id, value: @plate_id %>
+	<%= f.hidden_field :plate_id, value: @ticket.plate_id %>
 	<div class="control-group">
 		<%= f.label :citation, class: 'control-label' %>
 		<div class="controls">

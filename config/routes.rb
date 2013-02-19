@@ -1,13 +1,12 @@
 Mcp::Application.routes.draw do
-   get "citations/result"
 
-  # get "tickets/index"
+  get 'plates/scraper'
+  
+  get "tickets/index"
 
-  # get "tickets/new"
+  get "tickets/new"
 
-  # get "tickets/create"
-
-  # get "tickets/destroy"
+  get "tickets/destroy"
 
   get "plates/index"
   
@@ -22,8 +21,8 @@ Mcp::Application.routes.draw do
   resources :tickets
   resources :plates
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
- 
+  resources :sessions
+
 
   match '/signup',   to: 'users#new'
   match '/signin',   to: 'sessions#new'

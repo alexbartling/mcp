@@ -21,6 +21,7 @@ class TicketsController < ApplicationController
   	redirect_to current_user
   end
 
-  def destroy
+
+  def destroy  
   end
 end
