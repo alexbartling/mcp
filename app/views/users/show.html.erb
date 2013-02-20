@@ -37,7 +37,11 @@
 <div class='row-fluid'>
   <div class='span12'>
     <h2>Your Tickets</h2>
-   
+    <% current_user.plates.each do |plate| %>
+      <% plate.tickets.each do |ticket| %>
+      <%= ticket.price %>
+      <% end %>
+    <% end %>
   </div>
 </div>
 
