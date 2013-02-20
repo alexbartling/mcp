@@ -49,7 +49,8 @@ class PlatesController < ApplicationController
         elsif key == 1
           citation_hash['license'] = cell
         elsif key == 2
-          citation_hash['date'] = cell
+          date = Date.strptime(cell, "%m/%d/%y")
+          citation_hash['date'] = date.strftime("%Y-%m-%d")
         elsif key == 3
           citation_hash['price'] = cell
         elsif key == 4
