@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.0'
-
+gem 'will_paginate'
 gem 'bootstrap-sass', '2.1'
 gem 'omniauth'
 gem 'omniauth-facebook'

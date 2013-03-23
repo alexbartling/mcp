@@ -1,4 +1,4 @@
-class PlatesController < ApplicationController
+  class PlatesController < ApplicationController
  before_filter :signed_in_user
 
   def index
@@ -10,10 +10,16 @@ class PlatesController < ApplicationController
   end
 
   def create
-    @plate = Plate.create(params[:plate])
-    current_user.plates << @plate
+    #First, check if this plate already exists.
+    plate = Plate.where('license = ?', params[:plate][:license]).first
+    if plate 
+       if !current_user.plates.exists?(:id => plate.id)
+          current_user.plates << plate
+      end
+    else
+      current_user.plates.create(params[:plate]) 
+    end
     redirect_to current_user
-    
   end
 
   def scraper
@@ -61,33 +67,35 @@ class PlatesController < ApplicationController
       #Place the hash into the parent array.
       @row_array[key] = citation_hash
     end
-
-    #Insert each of these tickets into the database.
-    @row_array.each do |value|  
-      Ticket.create(
-        plate_id: plate.id,
-        citation_number: value['citation_number'],
-        date: value['date'],
-        price: value['price'],
-        fee: value['fee']
-      )
-
+    
+    #Set all of the tickets for this plate as paid.
+    plate.tickets.update_all(:paid => 1)
+    
+    #Insert/updated each of these tickets into the database.
+    @row_array.each do |value|
+      #Check if this ticket already exists. If so, update it.
+      ticket = Ticket.where('citation_number = ?', value['citation_number']).first
+      if ticket
+        ticket.price = value['price']
+        ticket.fee = value['fee']
+        ticket.paid = 0
+        ticket.save
+      else
+        #If this ticket does not exist, add it to the database.        
+        @ticket = Ticket.create(
+          plate_id: plate.id,
+          citation_number: value['citation_number'],
+          date: value['date'],
+          price: value['price'],
+          paid: 0,
+          fee: value['fee']
+        )
+      TicketMailer.new_ticket(@ticket).deliver
+      end
     end
-    redirect_to current_user 
+      redirect_to current_user 
   end
  
-  def show
-
-  end
-
-  def edit
-
-  end
-
-  def update
-
-  end
-
   def destroy
     Plate.find(params[:id]).destroy
     flash[:success] = "Plate destroyed"

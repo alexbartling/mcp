@@ -44,6 +44,7 @@
             <th>Citation Number</th>
             <th>License Plate</th>
             <th>Date</th>
+            <th>Price Increase</th>
             <th>Price</th>
             <th>Fee</th>
             <th>Total</th>
@@ -51,21 +52,29 @@
         </thead>
       <% current_user.plates.each do |plate| %>
         <% plate.tickets.each do |ticket| %>
+        <% if ticket.paid == false%>
         <tbody>
           <tr>
             <td><%= ticket.citation_number%></td>
             <td><%= ticket.plate.license  %></td>
             <td><%= ticket.date.strftime("%m/%d/%y") %></td>
+            <td><%= (ticket.date + 10.days).strftime("%m/%d/%y")  %></td>
             <td>$<%= ticket.price %></td>
             <td>$<%= ticket.fee %></td>
             <td>$<%= ticket.price + ticket.fee %></td>
           </tr>
-        </tbody> 
+        </tbody>
+        <% end %> 
         <% end %>
-      <% end %>
+      <% end %>  
       </table> 
   </div>
 </div>
+
+
+
+
+ 
 
   
 

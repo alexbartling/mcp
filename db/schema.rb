@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130207234118) do
+ActiveRecord::Schema.define(:version => 20130323201310) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -29,9 +29,13 @@ ActiveRecord::Schema.define(:version => 20130207234118) do
 
   create_table "tickets", :force => true do |t|
     t.integer  "plate_id"
-    t.string   "citation"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "citation_number"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.boolean  "paid"
+    t.float    "price"
+    t.float    "fee"
+    t.date     "date"
   end
 
   create_table "users", :force => true do |t|
