@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Citation Number</th>
+      <th>License Plate</th>
+      <th>Date</th>
+      <th>Price</th>
+      <th>Fee</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+<% current_user.plates.each do |plate| %>
+  <% plate.tickets.each do |ticket| %>
+  <tbody>
+    <tr>
+      <td><%= ticket.citation_number%></td>
+      <td><%= ticket.plate.license  %></td>
+      <td><%= ticket.date.strftime("%m/%d/%y") %></td>
+      <td>$<%= ticket.price %></td>
+      <td>$<%= ticket.fee %></td>
+      <td>$<%= ticket.price + ticket.fee %></td>
+    </tr>
+  </tbody> 
+    <% end %>
+<% end %>
