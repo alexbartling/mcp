@@ -1,7 +1,6 @@
 class TicketsController < ApplicationController
   before_filter :signed_in_user
 
-   attr_accessible :price
   def index
 
   end
