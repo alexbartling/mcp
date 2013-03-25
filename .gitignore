@@ -14,3 +14,6 @@
 /log/*.log
 /tmp
 .DS_Store
+
+# Ignore Dev_environmenet.
+/config/environments/development.rb
