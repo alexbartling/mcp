@@ -1,5 +1,7 @@
 Mcp::Application.routes.draw do
 
+  get "workers/scrape_plates"
+
   get 'plates/scraper'
   
   get "tickets/index"
