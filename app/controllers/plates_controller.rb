@@ -69,7 +69,7 @@
     end
     
     #Set all of the tickets for this plate as paid.
-    plate.tickets.update_all(:paid => 1)
+    plate.tickets.update_all(:paid => true)
     
     #Insert/updated each of these tickets into the database.
     @row_array.each do |value|
@@ -87,7 +87,7 @@
           citation_number: value['citation_number'],
           date: value['date'],
           price: value['price'],
-          paid: 0,
+          paid: false,
           fee: value['fee']
         )
       TicketMailer.new_ticket(@ticket).deliver
