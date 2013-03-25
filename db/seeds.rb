@@ -5,3 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'faker'
+
+@plate = ['373mzf', '963sjt', '754wuz', '671uzf' ]
+
+puts 'Generating 20 Users with password == password123'
+
+20.times do 
+	u = User.new(
+		:name => Faker::Name.name,
+		:email => Faker::Internet.email,
+		:password => 'password123',
+		:password_confirmation => 'password123'
+		)
+	u.save!
+
+
+end
