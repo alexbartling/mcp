@@ -9,7 +9,8 @@ gem 'omniauth-facebook'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 # gem 'mysql2'
-gem 'pg'
+gem 'mysql2', :group => :development
+gem 'pg', :group => :production
 gem 'faker'
 gem 'heroku'
 
