@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def show
   	@user=User.find(params[:id])
-    #@plate = Plate.new
+    @plate = Plate.new
   end
 
   def new
