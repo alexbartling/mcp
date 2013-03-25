@@ -69,7 +69,7 @@
     end
     
     #Set all of the tickets for this plate as paid.
-    plate.tickets.update_all(:paid => 1)
+    plate.tickets.update_all(:paid => YES)
     
     #Insert/updated each of these tickets into the database.
     @row_array.each do |value|
@@ -78,7 +78,7 @@
       if ticket
         ticket.price = value['price']
         ticket.fee = value['fee']
-        ticket.paid = 0
+        ticket.paid = NO
         ticket.save
       else
         #If this ticket does not exist, add it to the database.        
