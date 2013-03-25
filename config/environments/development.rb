@@ -37,7 +37,7 @@ Mcp::Application.configure do
   :port                 => 587,
   :domain               => 'tailwindcreative.com',
   :user_name            => 'ben@tailwindcreative.com',
-  :password             => 'burton123',
+  :password             => '*****',
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
   config.action_mailer.perform_deliveries = true
