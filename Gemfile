@@ -14,6 +14,7 @@ gem 'pg', :group => :production
 gem 'faker'
 gem 'heroku'
 gem 'iron_worker_ng'
+gem "rest-client", "~> 1.6.7"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

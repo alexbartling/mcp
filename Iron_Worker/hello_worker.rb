@@ -1,9 +1,6 @@
 # Worker code can be anything you want.
+require 'rest_client'
+
 puts "Starting HelloWorker at #{Time.now}"
-puts "Payload: #{params}"
-puts "Simulating hard work for 5 seconds..."
-5.times do |i|
-  puts "Sleep #{i}..."
-  sleep 1
-end
+RestClient.get "http://hidden-meadow-7494.herokuapp.com/workers/scrape_plates"
 puts "HelloWorker completed at #{Time.now}"
