@@ -67,15 +67,12 @@ GEM
     hike (1.2.1)
     httpauth (0.2.0)
     i18n (0.6.1)
-    iron_worker (2.3.16)
-      bundler
-      bundler
-      rest
-      rest
-      rest-client
-      rest-client
-      zip
-      zip
+    iron_core (0.5.2)
+      rest (>= 2.2.0)
+    iron_worker_ng (0.15.3)
+      bundler (>= 1.2.0)
+      iron_core (>= 0.5.1)
+      rubyzip (>= 0.9.9)
     journey (1.0.4)
     jquery-rails (2.2.0)
       railties (>= 3.0, < 5.0)
@@ -179,7 +176,6 @@ GEM
     unf_ext (0.0.5)
     webrobots (0.0.13)
     will_paginate (3.0.4)
-    zip (2.0.2)
 
 PLATFORMS
   ruby
@@ -190,7 +186,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   faker
   heroku
-  iron_worker
+  iron_worker_ng
   jquery-rails
   mechanize
   mysql2

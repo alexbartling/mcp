@@ -13,7 +13,7 @@ gem 'mysql2'
 #gem 'pg', :group => :production
 gem 'faker'
 gem 'heroku'
-gem 'iron_worker'
+gem 'iron_worker_ng'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

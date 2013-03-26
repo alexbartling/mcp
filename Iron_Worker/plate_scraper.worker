@@ -1,0 +1,4 @@
+# define the runtime language
+runtime "ruby"
+# exec is the file that will be executed:
+exec "plate_scraper_worker.rb"
