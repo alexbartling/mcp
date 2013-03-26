@@ -10,7 +10,7 @@ gem 'omniauth-facebook'
 
 # gem 'mysql2'
 gem 'mysql2'
-#gem 'pg', :group => :production
+gem 'pg', :group => :production
 gem 'faker'
 gem 'heroku'
 gem 'iron_worker_ng'
