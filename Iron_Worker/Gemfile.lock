@@ -9,4 +9,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rest-client (~> 1.6.7)
+  rest-client

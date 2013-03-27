@@ -1,4 +1,8 @@
 # define the runtime language
 runtime "ruby"
+
+#dependencies
+gem 'rest-client'
+
 # exec is the file that will be executed:
 exec "hello_worker.rb"

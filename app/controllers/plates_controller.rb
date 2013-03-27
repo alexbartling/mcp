@@ -13,11 +13,12 @@
     #First, check if this plate already exists.
     plate = Plate.where('license = ?', params[:plate][:license]).first
     if plate 
-       !current_user.plates.exists?(:id => plate.id)
-       current_user.plates << plate
-    
+       if !current_user.plates.exists?(:id => plate.id)
+          current_user.plates << plate
+       end
     else
-      current_user.plates.create(params[:plate]) 
+      new_plate = current_user.plates.create(params[:plate]) 
+      new_plate.scrape
     end
     redirect_to current_user
   end
