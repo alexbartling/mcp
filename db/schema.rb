@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130323201310) do
+ActiveRecord::Schema.define(:version => 20130327180331) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130323201310) do
     t.float    "price"
     t.float    "fee"
     t.date     "date"
+    t.boolean  "price_increase"
   end
 
   create_table "users", :force => true do |t|

@@ -9,7 +9,7 @@
   	<h2>Your Plates</h2>
   	<div id="plates"><% current_user.plates.each do |plate| %>
   		<div class="plate">
-  			<%= link_to plate.license, ticket_path(plate) %>
+  			<%= plate.license.upcase %>
   		</div>
   		<div>
         <%= link_to "Delete", plate, method: "delete", 
@@ -23,7 +23,7 @@
 	<div class="control-group">
 		<%= f.label :Add_plate, class: 'control-label' %>
 		<div class="controls">
-			<%= f.text_field :license %>
+			<%= f.text_field :license, :placeholder => "Format: 373mzf" %>
 		</div>
 	</div>
 	<div class="control-group" >
@@ -38,13 +38,14 @@
   <div class="tickets">    
     <h2>Your Tickets</h2>
   </div>
+    <div class='pay-link'><a href="https://step1.caledoncard.com/citations/milwaukee.html">Pay Tickets</a>
+    </div>
       <table class="table table-striped">
         <thead>
           <tr>
             <th>Citation Number</th>
             <th>License Plate</th>
             <th>Date</th>
-            <th>Price Increase</th>
             <th>Price</th>
             <th>Fee</th>
             <th>Total</th>
@@ -56,9 +57,8 @@
         <tbody>
           <tr>
             <td><%= ticket.citation_number%></td>
-            <td><%= ticket.plate.license  %></td>
+            <td><%= ticket.plate.license.upcase  %></td>
             <td><%= ticket.date.strftime("%m/%d/%y") %></td>
-            <td><%= (ticket.date + 10.days).strftime("%m/%d/%y")  %></td>
             <td>$<%= ticket.price %></td>
             <td>$<%= ticket.fee %></td>
             <td>$<%= ticket.price + ticket.fee %></td>

@@ -1,7 +1,10 @@
-You have just recieved a parking ticket <%= @user.name %>
+<p>You have just recieved a parking ticket <%= @user.name.upcase %></p>
 
-Here are the details of the ticket.
+<p>Here are the details of the your ticket.</p>
+<p>Ticket Citation Number: <%= @ticket.citation_number %></p>
+<p>Ticket Date Issued: $<%= @ticket.date.("%m/%d/%y") %></p>
+<p>Ticket Price: $<%= @ticket.price %></p>
+<p>Ticket Fee: $<%= @ticket.fee%></p>
+<p>Ticket Total: <b>$<%= @ticket.fee + @ticket.price %></b></p>
 
-Ticket Price:<%= @ticket.price %>
-Ticekt Citation Number:<%= @ticket.citation_number %>
-Date Issued:<%= @ticket.date %>
+<p><a href="https://step1.caledoncard.com/citations/milwaukee.html">Pay Tickets</a></p>

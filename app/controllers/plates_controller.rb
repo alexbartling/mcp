@@ -17,7 +17,9 @@
           current_user.plates << plate
        end
     else
-      new_plate = current_user.plates.create(params[:plate]) 
+      new_plate = current_user.plates.create(params[:plate])
+      new_plate.license.upcase.delete('-')
+      new_plate.save
       new_plate.scrape
     end
     redirect_to current_user

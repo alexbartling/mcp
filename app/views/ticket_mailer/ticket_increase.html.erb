@@ -1,0 +1,10 @@
+<p>Hey <%= @user.name %>,</p>
+
+<p>I have noticed that you have a ticket that hasn't been paid for 9 days. We recommend that you pay this ticket now to avoid a price increase.</p>
+
+<p>Here are the details of your ticket.</p>
+<p>Citation Number: <%= @ticket.citation_number %></p>
+<p>Issue date: <%= @ticket.date.strftime("%m/%d/%y") %></p>
+<p>Price: $<%= @ticket.price %></p>
+<p>Fee: $<%= @ticket.fee %></p>
+<p>Total: <b>$<%= @ticket.price + @ticket.fee %></b></p>

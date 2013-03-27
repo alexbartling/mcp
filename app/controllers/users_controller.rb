@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   before_filter :correct_user,  only: [:edit, :update, :show]
 
 
+
   def index
   	@users=User.all 
   end
@@ -30,12 +31,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-  	@user=User.find(params[:id])
   end
 
   def update
-      if @user.update_attributes(params[:user])
+    if @user.update_attributes(params[:user])
       sign_in @user
+      flash[:success] = "Profile updated"
       redirect_to @user
     else
       render 'edit'

@@ -70,6 +70,7 @@ class Plate < ActiveRecord::Base
 	          date: value['date'],
 	          price: value['price'],
 	          paid: false,
+	          price_increase: false,
 	          fee: value['fee']
 	        )
 	      TicketMailer.new_ticket(@ticket).deliver

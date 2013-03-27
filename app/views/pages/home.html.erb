@@ -1,8 +1,9 @@
 <div class="center hero-unit">
     <h1>Welcome to MCP</h1>
     <p>
-      An application to manage parking tickets for the city of Milwaukee
+      An application to manage parking tickets for the city of Milwaukee. MCP is built with the programming language Ruby using the framework Rails.
     </p>
+    <p>MCP is currently in beta so there will be bugs. If you have any questions you can find me on twitter <b>@alexbartling</b></p>
     <% if current_user.nil? %>
     <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
     <% else %>

@@ -35,9 +35,9 @@ Mcp::Application.configure do
   config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  :domain               => 'tailwindcreative.com',
-  :user_name            => 'ben@tailwindcreative.com',
-  :password             => '*****',
+  :user_name            => 'bartlingalex@gmail.com',
+  :domain               => 'gmail.com',
+  :password             => '730plank',
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
   config.action_mailer.perform_deliveries = true
