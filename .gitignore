@@ -16,4 +16,4 @@
 .DS_Store
 
 /Iron_Worker
-/config/environments/	
+/config/environments/*.rb	
