@@ -60,7 +60,7 @@ class Plate < ActiveRecord::Base
 	      if ticket
 	        ticket.price = value['price']
 	        ticket.fee = value['fee']
-	        ticket.paid = false,
+	        ticket.paid = false
 	        ticket.save
 	      else
 	        #If this ticket does not exist, add it to the database.        
