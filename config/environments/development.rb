@@ -35,9 +35,9 @@ Mcp::Application.configure do
   config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  :user_name            => 'bartlingalex@gmail.com',
+  :user_name            => ENV["GMAIL_USERNAME"],
   :domain               => 'gmail.com',
-  :password             => '730plank',
+  :password             => ENV["GMAIL_PASSWORD"],
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
   config.action_mailer.perform_deliveries = true
