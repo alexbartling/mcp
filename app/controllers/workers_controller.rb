@@ -4,7 +4,7 @@ class WorkersController < ApplicationController
   	if @plate
   		@plate.scrape
   		@plate.tickets.each do |ticket|
-  			if (ticket.paid == false && ticket.date <= (Date.today - 9.days) && ticket.price_increase == false)
+  			if (ticket.paid == false && ticket.date <= (ticket.date - 9.days) && ticket.price_increase == false)
   				TicketMailer.ticket_increase(ticket).deliver
   				ticket.price_increase = 1
   				ticket.save
