@@ -16,4 +16,7 @@
 .DS_Store
 
 /Iron_Worker
-/config/environments
+
+
+# Ignore application configuration
+/config/application.yml
