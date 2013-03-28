@@ -15,4 +15,5 @@
 /tmp
 .DS_Store
 
-.iron.json
+/Iron_Worker
+/config/environments/	

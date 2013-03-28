@@ -18,7 +18,7 @@
        end
     else
       new_plate = current_user.plates.create(params[:plate])
-      new_plate.license.upcase.delete('-')
+      new_plate.license.upcase
       new_plate.save
       new_plate.scrape
     end
